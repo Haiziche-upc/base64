@@ -20,7 +20,7 @@
  * @param[in]  src_len    string length
  * @param[out] dst        save the encode result,you need to alloc the space yourself,the memory space needs to be large enough to save the result
  * @param[in]  dst_size   size of dst,  dst_size > (1.34 * srclen) is a must
- * @return int            length of encoded src,if return -1 dst unable store the result
+ * @retval     -1   dst can't store the result
  *          
  */
 int base64_encode_str(const char *src, const int src_len, char *dst, int dst_size);
@@ -54,8 +54,8 @@ static const int DECODE_TABLE[128] = {    0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
                                     25, 0, 0, 0, 0, 0, 0, 26, 27, 28,
                                     29,30, 31, 32, 33, 34, 35, 36, 37, 38,
                                     39, 40, 41, 42, 43, 44, 45, 46, 47, 48,
+                                    +
                                     49, 50, 51, 0, 0, 0, 0, 0};
-
 #endif //SUHENG_BASE64_H
 
 
